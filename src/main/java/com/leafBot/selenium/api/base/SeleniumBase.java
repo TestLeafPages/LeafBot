@@ -29,7 +29,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.leafBot.selenium.api.design.Browser;
 import com.leafBot.selenium.api.design.Element;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.Reporter;
 
 public class SeleniumBase extends Reporter implements Browser, Element{
@@ -258,13 +257,10 @@ public class SeleniumBase extends Reporter implements Browser, Element{
 	public RemoteWebDriver startApp(String browser, String url) {
 		try {
 			if(browser.equalsIgnoreCase("chrome")) {
-				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 			} else if(browser.equalsIgnoreCase("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 			} else if(browser.equalsIgnoreCase("ie")) {
-				WebDriverManager.iedriver().setup();
 				driver = new InternetExplorerDriver();
 			}
 			driver.navigate().to(url);
