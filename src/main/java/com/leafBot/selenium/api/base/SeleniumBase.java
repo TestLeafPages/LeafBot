@@ -36,7 +36,7 @@ public class SeleniumBase extends Reporter implements Browser, Element{
 	public RemoteWebDriver driver;
 	public WebDriverWait wait;
 
-	int i=1;
+	//int i=1;
 	@Override
 	public void click(WebElement ele) {
 		String text="";
