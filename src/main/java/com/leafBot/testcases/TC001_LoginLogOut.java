@@ -19,12 +19,12 @@ public class TC001_LoginLogOut extends ProjectSpecificMethods{
 	}
 
 	@Test(dataProvider = "fetchData")
-	public void createLeaf(String uName, String pwd) {
+	public void runVerifyLogin(String uName, String pwd) {
 		new LoginPage(driver, node)
 		.enterUserName(uName)
 		.enterPassword(pwd)
 		.clickLogin()
-		.clickLogout();		
+		.verifyHomepage();	
 	}
 
 
